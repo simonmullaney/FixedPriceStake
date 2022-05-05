@@ -1,10 +1,10 @@
-#FixedPriceStake
+# FixedPriceStake
 
 Using a platform of your choice, build a smart contract that will be used to sell an asset to multiple parties. More specifically, the contract needs to allow anyone to set up an object with a fixed “price” that other users can then “purchase” stakes in. Once a purchase is initiated, the owner of the object receives funds, while the buyer gets stakes. The stakes are stored in the contract and are not transferable further.
 
 ## Prerequisites
 
-Prerequisites for this project include: Node.js NPM and Hardhat
+Prerequisites for this project include: Node.js, NPM and Hardhat
 
 ## Installation
 
@@ -14,13 +14,13 @@ Git clone the repository. Change directory to root and run:
 npm install
 ```
 
-##Testing
+## Testing
 
 run ```npx hardhat test``` to run test cases found in `./test/stakerTest.js`
 
-##Deployment
+## Deployment
 
-###Hardhat
+### Hardhat
 
 To deploy contract to embedded instance of Ethereum Hardhat Network run:
 
@@ -28,7 +28,7 @@ To deploy contract to embedded instance of Ethereum Hardhat Network run:
 npx hardhat run scripts/deploy.js
 ```
 
-###To Deploy to Ropsten test network:
+### To Deploy to Ropsten test network:
 
 Change `./scripts/deploy.js` to below template (Requires ALCHEMY_API_KEY, ROPSTEN_PRIVATE_KEY):
 
@@ -56,5 +56,4 @@ module.exports = {
 };
 
 ```
-
-and then run `npx hardhat run scripts/deploy.js --network ropsten` to deploy to Ropsten testnet
+Run `npx hardhat run scripts/deploy.js --network ropsten` to deploy to Ropsten testnet
