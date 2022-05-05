@@ -36,14 +36,14 @@ contract Staker {
     }
 
     /*
-    Given an address return the fixed price stake created by that address
+    Given an address return the fixed price stake set by that address
     */
     function stakingPricesBalanceOf(address account) external view returns (uint256) {
         return stakingPrices[account];
     }
 
     /*
-    Given an address return the fixed price stake created by that address
+    Given an address return the stake created/purchased by that address
     */
     function stakesBalanceOf(address account) external view returns (uint256) {
         return stakes[account];

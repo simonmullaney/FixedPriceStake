@@ -76,15 +76,5 @@ describe("Staker transactions", function () {
     //Expect addr1 to have 8 stakes
     expect(await staker.stakesBalanceOf(addr1.address)).to.equal(8);
   });
-
-  it("Should not be able to transfer stakes", async function () {
-
-    await staker.connect(owner).createStakeObject(10);
-    await staker.connect(addr1).purchaseStake(owner.address,{value: 3});
-    await staker.connect(addr2).purchaseStake(owner.address,{value: 5});
-
-
-
-
-  });
+s
 });
