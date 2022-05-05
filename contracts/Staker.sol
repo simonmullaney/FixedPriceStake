@@ -30,6 +30,7 @@ contract Staker {
     Function to allow users to purchase stakes. Once a purchase is initiated, the owner of the object receives funds, while the buyer gets stakes.
     */
     function purchaseStake(address payable stakeOwner) payable public {
+      require(stakes[stakeOwner] > msg.value, "Unable to purchase more stake than is available");
       stakeOwner.transfer(msg.value);
       stakes[stakeOwner] =  stakes[stakeOwner] - msg.value;
       stakes[msg.sender] = stakes[msg.sender] + msg.value;

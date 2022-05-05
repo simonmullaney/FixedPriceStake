@@ -76,5 +76,10 @@ describe("Staker transactions", function () {
     //Expect addr1 to have 8 stakes
     expect(await staker.stakesBalanceOf(addr1.address)).to.equal(8);
   });
-s
-});
+
+  it("Should not be able to buy more stake than is avaliable to sell", async function () {
+
+    await staker.connect(owner).createStakeObject(10);
+    expect(staker.connect(addr1).purchaseStake(owner.address,{value: 11})).to.be.revertedWith("Unable to purchase more stake than is available");
+  });
+})
